@@ -1,0 +1,36 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<div class="footer-content">
+		<p>&copy; {today.getFullYear()} 渡缘仙人. 保留所有权利.</p>
+		<p>渡缘仙人只渡有缘人，为您解读2026年十二生肖运势</p>
+		<p>网站备案号：京ICP备xxxxxxxx号</p>
+	</div>
+</footer>
+<style>
+	footer {
+		background: rgb(var(--black));
+		color: white;
+		text-align: center;
+		padding: 2rem 0;
+		margin-top: 3rem;
+		border-top: 2px solid var(--accent);
+	}
+	.footer-content {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1em;
+	}
+	.footer-content p {
+		margin: 0.5rem 0;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.9em;
+		text-indent: 0;
+	}
+	.footer-content p:first-child {
+		font-weight: 600;
+		color: var(--gold);
+	}
+</style>

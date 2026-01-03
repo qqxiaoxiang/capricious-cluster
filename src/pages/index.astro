@@ -1,0 +1,49 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+// 十二生肖数据
+const zodiacs = [
+	{ id: 'rat', name: '鼠', description: '2026年属鼠人的运势如何？财运、事业、感情、健康等方面全面解析，助你在龙年顺风顺水。', emoji: '🐭' },
+	{ id: 'ox', name: '牛', description: '2026年属牛人的运势详解，包含事业发展、财富积累、感情生活、健康状况等多方面内容。', emoji: '🐮' },
+	{ id: 'tiger', name: '虎', description: '2026年属虎人的全年运势预测，为你揭示龙年的机遇与挑战，提前做好准备。', emoji: '🐯' },
+	{ id: 'rabbit', name: '兔', description: '2026年属兔人的运势分析，涵盖事业、财运、感情、健康等各个方面，助你把握先机。', emoji: '🐰' },
+	{ id: 'dragon', name: '龙', description: '2026年属龙人的本命年运势，全面解析犯太岁的影响及化解方法，平安度过本命年。', emoji: '🐲' },
+	{ id: 'snake', name: '蛇', description: '2026年属蛇人的运势预测，为你详解事业、财运、感情、健康等方面的发展趋势。', emoji: '🐍' },
+	{ id: 'horse', name: '马', description: '2026年属马人的全年运势，助你了解龙年的吉凶祸福，提前做好规划。', emoji: '🐎' },
+	{ id: 'goat', name: '羊', description: '2026年属羊人的运势分析，涵盖事业、财运、感情、健康等各个方面，为你指引方向。', emoji: '🐏' },
+	{ id: 'monkey', name: '猴', description: '2026年属猴人的运势预测，详解龙年的机遇与挑战，助你事业有成、财运亨通。', emoji: '🐵' },
+	{ id: 'rooster', name: '鸡', description: '2026年属鸡人的全年运势，为你揭示龙年的吉凶祸福，提前做好应对准备。', emoji: '🐔' },
+	{ id: 'dog', name: '狗', description: '2026年属狗人的运势分析，涵盖事业、财运、感情、健康等各个方面，助你顺风顺水。', emoji: '🐶' },
+	{ id: 'pig', name: '猪', description: '2026年属猪人的运势预测，详解龙年的机遇与挑战，助你事业有成、家庭幸福。', emoji: '🐷' }
+];
+---
+
+<MainLayout title="首页" description={SITE_DESCRIPTION}>
+	<h1>2026年十二生肖运势</h1>
+	
+	<p>2026年是甲辰龙年，天干为甲木，地支为辰土，太岁星君为李诚大将军。在这一年里，十二生肖的运势将会发生不同的变化，有的生肖会迎来机遇，有的则需要谨慎应对。渡缘仙人在此为大家详细解析2026年十二生肖的运势，助大家在新的一年里顺风顺水，万事如意。</p>
+	
+	<div class="card-container">
+		{zodiacs.map((zodiac) => (
+			<a href={`/zodiac/${zodiac.id}`} class="card" key={zodiac.id}>
+				<div class="card-image">
+					{zodiac.emoji}
+				</div>
+				<div class="card-content">
+					<h3 class="card-title">{zodiac.name}年出生</h3>
+					<p class="card-description">{zodiac.description}</p>
+				</div>
+			</a>
+		))}
+	</div>
+	
+	<div class="image-placeholder">
+		<img src="https://q2.itc.cn/q_70/images03/20250622/f44720e8d22e4184b9a1eb72a378c67c.jpeg" alt="12生肖运势">
+	</div>
+	
+	<p>在中国传统命理学中，十二生肖与天干地支、五行八卦等有着密切的联系。2026年作为甲辰龙年，将会对不同生肖产生不同的影响。渡缘仙人提醒大家，运势只是一种参考，最终的命运还是掌握在自己手中。希望大家在新的一年里能够保持积极的心态，努力奋斗，创造属于自己的美好未来。</p>
+	
+	<p>渡缘仙人只渡有缘人，如果你想了解更多关于2026年生肖运势的详细信息，请点击上方的生肖卡片，查看对应的运势分析。如果你需要更深入的运势测算，可以通过联系我们页面与渡缘仙人取得联系。</p>
+</MainLayout>
+
